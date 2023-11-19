@@ -1,6 +1,0 @@
-<h2>Ajouter un lieu</h2>
-<form method="post" action="{% url 'add_place' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Ajouter</button>
-</form>
