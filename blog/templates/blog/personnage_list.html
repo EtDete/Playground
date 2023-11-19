@@ -1,0 +1,89 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<a href="{% url 'add_character' %}">Ajouter un personnage</a>
+<br>
+<a href="{% url 'add_place' %}">Ajouter un lieu</a>
+    <div class="personnages">
+        <div class="super-héros">
+            <h2>La galerie des Super-Héros</h2>
+            <br>
+            <br>
+            <br>
+                {% for personnage in personnages %}
+                    {% if personnage.orientation == 'Super-Héros' %}
+                        <div class="feuille_personnage">
+                            <div class="nom_personnage">
+                                <a href="{% url 'post_detail' id_personnage=personnage.id_personnage %}">{{ personnage.pseudonyme }}</a>
+                            </div>
+
+                            <img class="image_personnage" src='{{personnage.photo}}' alt="L'image n'a pas pu être chargée"/>
+
+                            <div class="description_personnage">
+                                <p>Orientation : {{ personnage.orientation }} | Force de combat : {{ personnage.force_de_combat }}</p>
+                            </div>
+                            <div class="identite_personnage">
+                               <p> Identité secrète : {{personnage.prenom}} {{personnage.nom}}</p>
+                            </div>
+                            <br>
+                            <div class="etat_personnage">
+                                <p> état : {{ personnage.etat }}</p>
+                            </div>
+
+                            <div class="lieu_actuel_personnage">
+                                <p> lieu : {{ personnage.lieu }}</p>
+                            </div>
+                        </div>
+                        {% endif %}
+                {% endfor %}
+        </div>
+        <br>
+        <br>
+        <div class="super-vilains">
+            <h2>La galerie des Super-Vilains</h2>
+            <br>
+            <br>
+            <br>
+                {% for personnage in personnages %}
+                    {% if personnage.orientation == 'Super-Vilain' %}
+                    <div class="feuille_personnage">
+                        <div class="nom_personnage">
+                            <a href="{% url 'post_detail' id_personnage=personnage.id_personnage %}">{{ personnage.pseudonyme }}</a>
+                        </div>
+
+                        <img class="image_personnage" src='{{personnage.photo}}' alt="L'image n'a pas pu être chargée"/>
+
+                        <div class="description_personnage">
+                            <p>Orientation : {{ personnage.orientation }} | Force de combat : {{ personnage.force_de_combat }}</p>
+                            <p>Identité secrète : {{personnage.prenom}} {{personnage.nom}}</p>
+                            <br>
+                            <p>état : {{ personnage.etat }}</p>
+                            <p>lieu : {{ personnage.lieu }}</p>
+                        </div>
+                    </div>
+                        {% endif %}
+                {% endfor %}
+        </div>
+    </div>
+    <h2>L'ensemble des lieux</h2>
+    <div class="Lieux">
+        {% for lieu in lieux %}
+            <div class="fiche_lieu">
+    
+                <div class="nom_lieu">
+                    {{ lieu.id_lieu }}
+                </div>
+    
+                <div class="disponibilite_lieu">
+                    disponibilité : {{ lieu.disponibilite }}
+                </div>
+                <br>
+    
+                <img class="image_lieu" src={{lieu.photo}} alt="Pas d'image"/>
+    
+                <br>
+            </div>
+        {% endfor %}
+        </div>
+{% endblock %}

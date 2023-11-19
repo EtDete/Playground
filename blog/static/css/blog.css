@@ -1,0 +1,49 @@
+body{
+    background: url('https://wallpapers.com/images/featured/marvel-comic-book-background-0exuprkk5cwj6ail.jpg') no-repeat center center fixed;
+    background-size: cover;
+    backdrop-filter: blur(8px);
+    color: black;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    padding: 0;
+    font-size: 35px;
+}
+#bandeau{
+    text-align: center;
+    padding: 0%;
+}
+.content_container{
+    margin: 5%;
+}
+
+.feuille_personnage {
+        display: inline-block;
+
+        margin-top: 1%;
+        width: 40%; 
+        box-sizing: border-box; 
+}
+.image_personnage{
+    border-radius: 50%;
+    overflow: hidden; 
+    width: 200px; 
+    height: 200px; 
+}
+.fiche_lieu{
+    display: inline-block;
+    width: 40%; 
+    margin: 0px;
+    box-sizing: border-box;
+}
+.image_lieu{
+    border-radius: 50%;
+    overflow: hidden; 
+    width: 200px; 
+    height: 200px; 
+}
+.nom_personnage{
+    
+    
+    text-align: left;
+}
+
+
