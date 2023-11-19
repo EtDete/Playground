@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}"> 
+        <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">  --> 
+        
+        <title> Marvel Hero and Vilain Simulator</title>
+    </head>
+
+    <body>
+    
+        <header class="page_header">
+            
+            <div id="bandeau">
+                <h1>Bienvenue sur le site du simulateur de Super-Héros ou de Super-Vilain !</h1>
+            </div>
+        </header>
+        <p>
+            Voici les quelques règles à savoir :
+        </p>
+        <ol>
+            <li>Chaque personnage créer doit impérativement être doté d'un lieu personnel sous la dénomination suivante : "Endroit calme de Pseudonyme"</li>
+            <li>Les déplacements possibles sont les suivants :
+                <ul>
+                    <li>Un personnage peut s'entrainer dans la salle d'entrainement s'il est reposé. Il gagnera entre 1 et 5 force de combat.</li>
+                    <li>Un personnage fatigué doit aller à la salle de repos qui n'admet qu'un personnage à la fois. Son état devient reposé</li>
+                    <li>Un personnage reposé peut aller en Ville et aider des gens ou mettre la pagaille selon son orientation. Toutefois si un autre personnage de l'orientation opposé est présent un combat se déclenche.</li>
+                    <li>Selon l'issue du combat ou non un personnage deviendra heureux ou colérique après son passage en ville et doit se remettre de ses émotions dans son endroit calme. Son état devient alors fatigué.</li>
+                </ul>
+            </li>
+            <li>Un combat est lancé si un personnage de l'orientation opposé se trouve aussi en ville. Le gagnant de ce combat est celui qui possède la plus grande force de combat. Le perdant fuit vers son endroit calme, devient alors fatigué et perds entre 1 et 5 force de combat. Le gagnant reste en ville et devient heureux ou colérique.</li>
+        </ol>
+        <a href="http://127.0.0.1:8000/admin">Page admin</a>
+        <div class="content_container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body> 
+</html>
